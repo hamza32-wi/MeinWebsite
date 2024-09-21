@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Zahlen Generator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #randomButton {
+            background-color: rgb(0, 89, 255);
+            color: white;
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #randomNumbers {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="randomButton">leck mich</button>
+    <div id="randomNumbers"></div>
+
+    <script>
+        document.getElementById('randomButton').addEventListener('click', function() {
+            // Erzeuge 3 zufällige Zahlen zwischen 0 und 9
+            let numbers = [];
+            for (let i = 0; i < 3; i++) {
+                numbers.push(Math.floor(Math.random() * 10));
+            }
+
+            // Zeige die Zahlen an
+            document.getElementById('randomNumbers').textContent = 'Zahlen: ' + numbers.join(', ');
+        });
+    </script>
+
+</body>
+</html>
